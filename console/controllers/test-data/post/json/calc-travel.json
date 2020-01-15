@@ -1,0 +1,20 @@
+{
+  "country": ["RU", "UA"],
+  "date_from": "2018-02-02",
+  "date_to": "2018-02-05",
+  "travellers": [
+    { "first_name": "foo", "last_name": "last", "age": 66 },
+    { "age": 16 },
+    { }
+  ],
+  "solution_id":null,
+  "filters": [
+    {
+      "filter_id": 24,
+      "params": {
+        "amount": 2000,
+        "sick-list": 1
+      }
+    }
+  ]
+}

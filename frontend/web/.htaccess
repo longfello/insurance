@@ -1,0 +1,16 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} =on
+RewriteRule ^(.*)$ - [env=ps:https]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ - [env=ps:http]
+
+RewriteCond %{REQUEST_URI} ^/travel-insurance$
+RewriteRule ^(.*)$ %{ENV:ps}://%{HTTP_HOST}/page/travel-insurance-form.html [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/travel-insurance.html$
+RewriteRule ^(.*)$ %{ENV:ps}://%{HTTP_HOST}/page/travel-insurance-form.html [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
